@@ -146,6 +146,7 @@ def query_abstracts(pubmed_ids: List[int]) -> List[Dict]:
                 abstract = "\n".join(
                     abstract_element.text.strip()
                     for abstract_element in abstract_elements
+                    if abstract_element.text
                 )
             else:
                 abstract = ""
@@ -219,7 +220,7 @@ def query_pubmed(
         List[Dict]: a list of article details
     """
     s_start = 1
-    total_counts = 20
+    total_counts = n_uids
     filtered_articles: List = []
     while (s_start - 1) * n_uids < total_counts:
         pubmed_ids, total_counts = query_uids_from_terms(
@@ -253,5 +254,3 @@ if __name__ == "__main__":
     # save articles to a json file
     with open("articles.json", "w") as f:
         json.dump(articles, f, indent=4)
-
-# https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=38423945,38421149,38418932,38417367,38417026,38415046,38405187,38400641,38376098,38371580&retmode=json
