@@ -2,9 +2,11 @@ import json
 import sys
 import xml.etree.ElementTree as ET
 from logging import Formatter, StreamHandler, getLogger
+from pathlib import Path
 from typing import Dict, List, Tuple
 
 import requests
+from ppl.db.index_builder import build_index
 
 LOGGER = getLogger(__name__)
 LOGGER.setLevel("INFO")
@@ -254,3 +256,8 @@ if __name__ == "__main__":
     # save articles to a json file
     with open("articles.json", "w") as f:
         json.dump(articles, f, indent=4)
+
+    # build index
+    parent_dir = Path(".")
+    save_dir = Path("index")
+    build_index(parent_dir, save_dir)
