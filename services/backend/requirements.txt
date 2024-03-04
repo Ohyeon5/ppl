@@ -5,3 +5,5 @@ sqlalchemy
 fastapi-users-db-sqlalchemy
 pydantic
 requests
+llama-index
+llama-index-llms-llama-cpp
