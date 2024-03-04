@@ -6,7 +6,7 @@ from pathlib import Path
 from typing import Dict, List, Tuple
 
 import requests
-from ppl.db.index_builder import build_index
+from ppl.utils.index_builder import build_index
 
 LOGGER = getLogger(__name__)
 LOGGER.setLevel("INFO")
@@ -246,7 +246,7 @@ if __name__ == "__main__":
         "consentyx",
         "psoriasis",
         "treatment outcomes",
-        "'Secukinumab",
+        "Secukinumab",
         "efficacy",
         "safety",
     ]

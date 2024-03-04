@@ -14,3 +14,7 @@ dependencies:
   - fastapi
   - fastapi-users-db-sqlalchemy
   - uvicorn
+  - pip:
+    - llama-index
+    - llama-index-llms-llama-cpp
+    - llama-index-embeddings-huggingface

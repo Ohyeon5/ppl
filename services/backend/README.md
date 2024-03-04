@@ -1,20 +1,5 @@
-# PYPACKAGE: Python Package template
-This is a template for a Python package. It includes the following:
-- A `Makefile` for easy setup and testing
-- A `environment.yaml` file for easy installation of required libraries
+# PPL Backend
+The backend service of Pharma Pro Link (PPL) is a RESTful API service that provides the following functionalities:
 
-## Setup
-To install the required libraries, run the following command:
-```
-make env
-```
-For the development environment, run the following command:
-```
-make env-dev
-```
-
-## Tests
-To run the tests, run the following command:
-```
-make test
-```
+## LLM models
+[Llama-cpp-python](https://github.com/abetlen/llama-cpp-python) -  [llama-index integration](https://docs.llamaindex.ai/en/stable/examples/llm/llama_2_llama_cpp.html)

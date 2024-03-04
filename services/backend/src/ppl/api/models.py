@@ -1,14 +1,17 @@
-from typing import Optional
+from typing import List, Optional
 
 from pydantic import BaseModel, Field
 
 
 class InferenceRequest(BaseModel):
-    model_name: str
-    input_text: str
-    api_key: Optional[str] = None
-    org_id: Optional[str] = None
-    generation_cfg: Optional[dict] = None
-    top_k_similar: int = Field(
-        description="Number of documents to query from vector db", default=3
+    medicine: str
+    indicies: List[int]
+
+
+class PubMedRequest(BaseModel):
+    search_term: str
+    keywords: list[str]
+    n_uids: int = Field(description="Number of articles to return", default=15)
+    relative_date: Optional[int] = Field(
+        description="Number of days in the past", default=None
     )
