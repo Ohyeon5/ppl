@@ -4,4 +4,4 @@ psycopg2
 sqlalchemy
 fastapi-users-db-sqlalchemy
 pydantic
-alembic
+requests
