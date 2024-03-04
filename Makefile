@@ -5,8 +5,8 @@ frontend_path=./services/frontend
 python=${backend_path}/env/bin/python
 
 env-web: precommit ${backend_path}/environment.yaml
-	conda env create -f ./environment.yaml -p ${backend_path}/env
-	${python} -m pip install -e .
+	conda env create -f ${backend_path}/environment.yaml -p ${backend_path}/env
+	${python} -m pip install -e ${backend_path}
 
 env-ui:
 	cd ${frontend_path} && npm install
