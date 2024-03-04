@@ -1,0 +1,16 @@
+name: PYPACKAGE
+channels:
+  - conda-forge
+  - defaults
+  - pip
+dependencies:
+  - python==3.11
+  - numpy
+  - pandas
+  - pydantic
+  - pytest
+  - psycopg2
+  - sqlalchemy
+  - fastapi
+  - fastapi-users-db-sqlalchemy
+  - uvicorn
