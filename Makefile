@@ -12,7 +12,7 @@ env-ui:
 	cd ${frontend_path} && npm install
 
 run-web:
-	${python} -m uvicorn services.backend.src.ppl.main:app --host localhost --port 8000 --reload
+	${python} -m uvicorn services.backend.src.ppl.api.main:app --host localhost --port 8000 --reload
 
 precommit:
 	bash ./scripts/install_precommit.sh
