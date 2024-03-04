@@ -6,6 +6,6 @@ A full-stack application that collects relevant information from search APIs (e.
 ./services
     ./backend
     ./frontend
-./terraform
+./tfconfig
 ./scripts
 ```
