@@ -17,5 +17,5 @@ run-web:
 precommit:
 	bash ./scripts/install_precommit.sh
 
-test-web: 
+test-web:
 	${python} -m pytest ${backend_path}/tests

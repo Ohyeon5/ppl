@@ -5,14 +5,7 @@ A full-stack application that collects relevant information from search APIs (e.
 ```
 ./services
     ./backend
-        ./src/ppl
-            ./api
-            ./db
-            ./core
-            ./util
-        ./tests
     ./frontend
 ./terraform
 ./scripts
 ```
-
