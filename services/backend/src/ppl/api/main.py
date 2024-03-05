@@ -6,9 +6,8 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from ppl.api.models import BrochureRequest, InferenceRequest, PubMedRequest
 from ppl.path import DATA_PATH
+from ppl.utils.model_zoo import LLAMA_CPP
 from ppl.utils.pubmed import query_pubmed
-
-from services.backend.src.ppl.utils.model_zoo import LLAMA_CPP
 
 LOGGER = logging.getLogger(__name__)
 

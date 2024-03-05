@@ -4,8 +4,7 @@ from pathlib import Path
 
 from llama_index.core import ServiceContext, VectorStoreIndex
 from llama_index.core.schema import TextNode
-
-from services.backend.src.ppl.utils.model_zoo import LLAMA_CPP  # , EMBED_MODEL
+from ppl.utils.model_zoo import LLAMA_CPP  # , EMBED_MODEL
 
 # TODO: Implement Azure OpenAI
 # from ppl.utils.model_loader import OPENAI_LLM, OPENAI_EMBED
