@@ -13,4 +13,4 @@ COPY pyproject.toml /code/pyproject.toml
 
 RUN pip install /code/
 
-CMD ["python", "-m", "ppl.db.pubmed"]
+CMD ["python", "-m", "ppl.utils.pubmed"]
