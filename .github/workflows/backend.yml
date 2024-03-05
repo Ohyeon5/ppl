@@ -66,5 +66,5 @@ jobs:
         with:
           app-name: 'ppl-api'
           slot-name: 'development'
-          publish-profile: ${{ needs.terraform.outputs.webapp_publish_profile}}
+          publish-profile: ${{ needs.azure-provider.outputs.webapp_publish_profile}}
           images: 'utils.azurecr.io/${{ secrets.AzureAppService_ContainerUsername}}/ppl-api:${{ github.sha }}'
