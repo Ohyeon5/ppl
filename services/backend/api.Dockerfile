@@ -16,4 +16,4 @@ COPY pyproject.toml /code/pyproject.toml
 
 RUN pip install /code/
 
-CMD ["uvicorn", "src.ppl.api.main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "src.ppl.api.main:app", "--host", "0.0.0.0", "--port", "80"]
