@@ -17,6 +17,7 @@ app = FastAPI(title="ppl-api", docs_url="/api/docs", openapi_url="/api")
 origins = [
     "http://localhost:5173",
     "localhost:5173",
+    "https://jolly-moss-0dba25e1e.5.azurestaticapps.net/",
 ]
 
 app.add_middleware(
