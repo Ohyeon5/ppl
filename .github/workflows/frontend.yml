@@ -1,4 +1,4 @@
-name: PPL resource deployment
+name: PPL UI deployment
 
 on:
   push:
