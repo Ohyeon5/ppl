@@ -254,7 +254,7 @@ if __name__ == "__main__":
         "safety",
     ]
 
-    articles = query_pubmed(search_term, keywords, relative_date=90)
+    articles = query_pubmed(search_term, keywords, relative_date=30)
 
     # save articles to a json file
     with open(DATA_PATH / "articles.json", "w") as f:
