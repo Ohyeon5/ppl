@@ -77,6 +77,6 @@ jobs:
         uses: azure/webapps-deploy@v2
         with:
           app-name: 'ppl-api'
-          slot-name: 'development'
+          slot-name: 'production'
           publish-profile: ${{ needs.azure-provider.outputs.webapp_publish_profile}}
           images: 'utils.azurecr.io/${{ secrets.AzureAppService_ContainerUsername}}/ppl-api:${{ github.sha }}'
