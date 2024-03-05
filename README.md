@@ -30,7 +30,8 @@ A full-stack application with frontend and backend services.
 ### Backend
 - FastAPI + Docker
 - Collects information from search APIs (e.g., PubMed).
-- Creates index using embedding models (e.g., Llama2-7B).
+- Creates index using [Llama-index](https://docs.llamaindex.ai/en/stable/getting_started/concepts.html) and embedding models.
+- RAG (Retrieval Augmented Generation) approach and llms (e.g., Llama2-7B) to generate expert-knowledge include summary.
 - Provides a user-friendly interface for users to search and explore the information.
 - Creates readable report out of it.
 

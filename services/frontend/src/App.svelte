@@ -40,7 +40,7 @@
       BASE_API_URL =
       window.location.protocol + "//" + window.location.hostname + ":8000/api/";
     } else {
-      BASE_API_URL =window.location.protocol + "//" + "ppl-api.azurewebsites.net" + "/api/";
+      BASE_API_URL =window.location.protocol + "//" + "http://ppl-container-app.azurewebsites.net" + "/api/";
     }
     console.log(BASE_API_URL);
   });
