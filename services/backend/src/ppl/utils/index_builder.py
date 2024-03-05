@@ -4,7 +4,8 @@ from pathlib import Path
 
 from llama_index.core import ServiceContext, VectorStoreIndex
 from llama_index.core.schema import TextNode
-from ppl.utils.model_zoo import LLAMA_CPP  # , EMBED_MODEL
+
+# from ppl.utils.model_zoo import LLAMA_CPP  # , EMBED_MODEL
 
 # TODO: Implement Azure OpenAI
 # from ppl.utils.model_loader import OPENAI_LLM, OPENAI_EMBED
@@ -32,7 +33,8 @@ def prepare_context_llmcpp_huggingface() -> ServiceContext:
     """
 
     service_context = ServiceContext.from_defaults(
-        llm=LLAMA_CPP,
+        ## LLAMA_CPP is commented out because it requires downloading a 7B model
+        # llm=LLAMA_CPP,
         # embed_model=EMBED_MODEL,
     )
     return service_context

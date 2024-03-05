@@ -1,23 +1,25 @@
 # from llama_index.embeddings.huggingface import HuggingFaceEmbedding
-from llama_index.llms.llama_cpp import LlamaCPP
-from llama_index.llms.llama_cpp.llama_utils import (
-    completion_to_prompt,
-    messages_to_prompt,
-)
+# from llama_index.llms.llama_cpp import LlamaCPP
+# from llama_index.llms.llama_cpp.llama_utils import (
+#     completion_to_prompt,
+#     messages_to_prompt,
+# )
 
-model_url = "https://huggingface.co/TheBloke/Llama-2-7B-Chat-GGUF/resolve/main/llama-2-7b-chat.Q3_K_S.gguf"
-LLAMA_CPP = LlamaCPP(
-    model_url=model_url,
-    model_path=None,
-    temperature=0.1,
-    max_new_tokens=1024,
-    context_window=3900,
-    generate_kwargs={},
-    model_kwargs={},
-    messages_to_prompt=messages_to_prompt,
-    completion_to_prompt=completion_to_prompt,
-    verbose=False,
-)
+## LLAMA_CPP is commented out because it requires downloading a 7B model
+## TODO: mount model weights from Azure Blob Storage
+# model_url = "https://huggingface.co/TheBloke/Llama-2-7B-Chat-GGUF/resolve/main/llama-2-7b-chat.Q3_K_S.gguf"
+# LLAMA_CPP = LlamaCPP(
+#     model_url=model_url,
+#     model_path=None,
+#     temperature=0.1,
+#     max_new_tokens=1024,
+#     context_window=3900,
+#     generate_kwargs={},
+#     model_kwargs={},
+#     messages_to_prompt=messages_to_prompt,
+#     completion_to_prompt=completion_to_prompt,
+#     verbose=False,
+# )
 # TODO: Implement EMBED_MODEL
 # EMBED_MODEL = HuggingFaceEmbedding(model_name="intfloat/e5-small")
 
