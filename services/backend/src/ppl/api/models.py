@@ -8,6 +8,11 @@ class InferenceRequest(BaseModel):
     indicies: List[int]
 
 
+class BrochureRequest(BaseModel):
+    medicine: str
+    response_id: int
+
+
 class PubMedRequest(BaseModel):
     search_term: str
     keywords: list[str]

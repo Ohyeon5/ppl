@@ -4,7 +4,7 @@ from typing import Dict, List
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from ppl.api.models import InferenceRequest, PubMedRequest
+from ppl.api.models import BrochureRequest, InferenceRequest, PubMedRequest
 from ppl.path import DATA_PATH
 from ppl.utils.pubmed import query_pubmed
 
@@ -61,4 +61,50 @@ async def local_q_and_a(request: InferenceRequest):
         f"Summary the benefit of {request.medicine} given following articles: "
         + " ".join([json_content[ii]["abstract"] for ii in request.indicies])
     )
+    return {
+        "response": response.text,
+        "references": [json_content[ii] for ii in request.indicies],
+    }
+
+
+@app.post("/api/brochure")
+async def brochure_text(request: BrochureRequest):
+    # load json file
+    json_file = DATA_PATH / "responses.json"
+    with open(json_file, "r") as f:
+        json_content = json.load(f)
+    response = LLAMA_CPP.complete(
+        f"Given the benefits from {request.medicine} "
+        + f"generate a marketing brochure for the medicine product {request.medicine} "
+        + "The audiences are medical doctors. Provide text and placeholders for the statistical graphs."
+        + "Here is the benefit : "
+        + f"{json_content[request.response_id]['response']}"
+    )
     return {"response": response.text}
+
+
+# TODO: Remove following endpoints, demo purpose only
+@app.get("/api/responses/{response_id}")
+async def get_response(response_id: int):
+    # load json file
+    json_file = DATA_PATH / "responses.json"
+    with open(json_file, "r") as f:
+        json_content = json.load(f)
+    return {
+        "medicine": json_content[response_id]["medicine"],
+        "response": json_content[response_id]["response"],
+        "references": json_content[response_id]["references"],
+    }
+
+
+@app.get("/api/local_brochure/{response_id}")
+async def get_brochure(response_id: int):
+    # load json file
+    json_file = DATA_PATH / "brochure.json"
+    with open(json_file, "r") as f:
+        json_content = json.load(f)
+    return {
+        "medicine": json_content[response_id]["medicine"],
+        "response": json_content[response_id]["brochure"],
+        "references": json_content[response_id]["references"],
+    }

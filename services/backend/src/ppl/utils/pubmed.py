@@ -6,6 +6,7 @@ from pathlib import Path
 from typing import Dict, List, Tuple
 
 import requests
+from ppl.path import DATA_PATH
 from ppl.utils.index_builder import build_index
 
 LOGGER = getLogger(__name__)
@@ -254,7 +255,7 @@ if __name__ == "__main__":
     articles = query_pubmed(search_term, keywords, relative_date=90)
 
     # save articles to a json file
-    with open("articles.json", "w") as f:
+    with open(DATA_PATH / "articles.json", "w") as f:
         json.dump(articles, f, indent=4)
 
     # build index
