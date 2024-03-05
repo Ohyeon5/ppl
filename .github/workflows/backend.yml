@@ -20,7 +20,7 @@ jobs:
 
       - name: Get Publish Profile
         run: |
-          echo "::set-output name=PUBLISH_PROFILE::$(az webapp deployment list-publishing-profiles -g ${{ steps.terraform-apply.outputs.resource_group_name}} -n ${{steps.terraform-apply.outputs.web_app_name}} --xml)"
+          echo "::set-output name=PUBLISH_PROFILE::$(az webapp deployment list-publishing-profiles -g ppl-resources -n ppl-api --xml)"
         id: getPublishProfile
 
     outputs:
