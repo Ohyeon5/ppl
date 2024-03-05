@@ -9,6 +9,7 @@ COPY .dockerignore /code/.dockerignore
 RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
 
 COPY src /code/src
+COPY data /code/data
 COPY pyproject.toml /code/pyproject.toml
 
 RUN pip install /code/
