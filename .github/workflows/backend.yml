@@ -79,4 +79,4 @@ jobs:
           app-name: 'ppl-api'
           slot-name: 'production'
           publish-profile: ${{ needs.azure-provider.outputs.webapp_publish_profile}}
-          images: 'utils.azurecr.io/${{ secrets.AzureAppService_ContainerUsername}}/ppl-api:${{ github.sha }}'
+          images: utils.azurecr.io/${{ secrets.AzureAppService_ContainerUsername}}/ppl-api:${{ github.sha }}

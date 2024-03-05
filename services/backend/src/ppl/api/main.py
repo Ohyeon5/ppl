@@ -4,7 +4,7 @@ from typing import Dict, List
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from ppl.api.models import PubMedRequest  # BrochureRequest, InferenceRequest,
+from ppl.api.models import PubMedRequest  # ,  BrochureRequest, InferenceRequest
 from ppl.path import DATA_PATH
 from ppl.utils.pubmed import query_pubmed
 
