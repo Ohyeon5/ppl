@@ -14,6 +14,8 @@ jobs:
   query_pubmed:
     runs-on: ubuntu-latest
     name: Query Pubmed
+    env:
+      KMP_DUPLICATE_LIB_OK: TRUE
     steps:
       - name: Checkout the repository
         uses: actions/checkout@v4
