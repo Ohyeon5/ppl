@@ -1,6 +1,14 @@
 # Pharma Pro Link (PPL)
-A full-stack application that collects relevant information from search APIs (e.g., PubMed), creates index using embedding models (e.g., BERT), and provides a user-friendly interface for users to search and explore the information, then create readable report out of it.
+A full-stack application that collects relevant information from search APIs (e.g., PubMed), creates latent embedding vector using embedding models, and provides a user-friendly interface for users to search and explore the information, then create readable report utilizing LLMs.
 
+## Project objective
+- Extract expert knowledge and store it in a database.
+- Retrieve expert knowlege efficiently.
+- Generate a reliable summary of the expert knowledge.
+- Generate a readable marketing brochure out of it.
+- Provide a user-friendly interface for users to search and explore the information.
+
+## Workflow
 ![workflow](resources/workflow.png)
 
 ## Project Structure
