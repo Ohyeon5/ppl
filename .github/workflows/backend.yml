@@ -60,6 +60,18 @@ jobs:
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
 
     steps:
+      - name: Azure login
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Log in to registry
+        uses: docker/login-action@v2
+        with:
+            registry: https://utils.azurecr.io/
+            username: ${{ secrets.AzureAppService_ContainerUsername}}
+            password: ${{ secrets.AzureAppService_ContainerPassword}}
+
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
