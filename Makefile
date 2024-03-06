@@ -12,7 +12,7 @@ env-ui:
 	cd ${frontend_path} && npm install
 
 run-api:
-	${python} -m uvicorn services.backend.src.ppl.api.main:app --host localhost --port 8000 --reload
+	source ./scripts/variables.sh && ${python} -m uvicorn services.backend.src.ppl.api.main:app --host localhost --port 8000 --reload
 
 run-ui:
 	cd ${frontend_path} && npm run dev
@@ -22,3 +22,7 @@ precommit:
 
 test-api:
 	${python} -m pytest ${backend_path}/tests
+
+test-docker:
+	cd ${backend_path} && docker build -f api.Dockerfile -t test-ppl-api .
+	cd ${backend_path} && docker run -p 8000:8000 test-ppl-api

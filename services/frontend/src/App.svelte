@@ -60,7 +60,7 @@
 
   <div class="response">
     {#if data && !brochure}
-      <h2>Response</h2>
+      <h2>Summary</h2>
       <p>{@html data.response}</p>
       <h3>References</h3>
       <div class="references">
